@@ -1,0 +1,39 @@
+﻿
+
+<a href="/#MyCart" class="btn btn-basic btn-lg" style=" margin-left: 86%; margin-top:5%; ">
+  <span class="glyphicon glyphicon-shopping-cart"></span> Cart {{cartCount}} 
+</a>
+
+
+<div style="text-align:left">
+   <b>Search</b>  <input type="text" ng-model="search"
+                  placeholder="Search Books" />
+
+</div>
+
+<table class="responstable">
+
+    <tr>
+        <th></th>
+        <th>Title</th>
+        <th><span>Author</span></th>
+        <th>Price</th>
+        <th>In Stock</th>
+        <th>Action</th>
+
+    </tr>
+
+
+    <tr ng-repeat="Item in MenuList| filter:search">
+        
+        <td><img src="../images/books.png"height="50" width="50" /></td>
+        <td>{{Item.Title}}</td>
+        <td>{{Item.Author}}</td>
+        <td>{{Item.Price}} SEK</td>
+        <td>{{Item.InStock}}</td>
+        <td><button type="button" class="btn btn-success" ng-click="addItemstoCart(Item,$index)" style=" margin-right: 91%; }">Add to Cart <span class="glyphicon glyphicon-shopping-cart"></span></button></td>
+    </tr>
+
+
+</table>
+

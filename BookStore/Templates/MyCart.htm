@@ -1,0 +1,81 @@
+﻿
+<br/>
+<a href="/#Home"style=" margin-top:5%";>Home</a> > My Cart
+
+<h4><b>Shopping Cart</b></h4>
+<div ng-controller="CartlController">
+    <table class="responstable">
+
+        <tr>
+
+            <th>Title</th>
+            <th><span>Author</span></th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Amount</th>
+            <th>Action</th>
+
+        </tr>
+
+        <tr>
+        <tr ng-repeat="additem in CartList">
+            <td>{{additem.Title}}</td>
+            <td>{{additem.Author}}</td>
+            <td>{{additem.Price}} SEK</td>
+            <td>{{additem.Count}}</td>
+            <td>{{additem.TotalAmount}} SEK</td>
+            <td><button type="button" class="btn btn-danger" ng-click="removeFromCart(additem.Id)" style=" margin-right: 91%; }">Remove from Cart <span class="glyphicon glyphicon-shopping-cart"></span></button></td>
+
+
+        </tr>
+        <tr>
+            <td><h4><b>Amount Payable</b></h4></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><b>{{TotalAmount}} SEK</b></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+
+
+    <div class="panel-footer">
+        <div class="previous">
+            <div class="pull-right">
+                <a href="">
+                    <span class="btn btn-success" ng-click="checkoutdetails=!checkoutdetails" />Place an Order<span class="glyphicon glyphicon-shopping-cart"></span>
+                </a>             
+          </div>
+            </div>
+        <div class="next">
+            <div class="pull-left">
+                    <a href="/#Home">
+                        <span class="btn btn-success" />Continue Shopping<span class="glyphicon glyphicon-shopping-cart"></span>
+                    </a>
+            </div>
+            </div>
+    </div>
+    <div ng-show="checkoutdetails">
+        <center><h3>You have Placed an Order Successfully</h3></center>
+        <table class="responstable">
+            <tr>
+                <th>Title</th>
+                <th>Quantity</th>
+                <th>Amount</th>
+            </tr>
+            <tr>
+            <tr ng-repeat="additem in CartList">
+                <td>{{additem.Title}}</td>
+                <td>{{additem.Count}}</td>
+                <td>{{additem.TotalAmount}} SEK</td>
+            </tr>
+            <tr>
+                <td><h4><b>Total Amount Paid</b></h4></td>
+                <td></td>
+                <td><b>{{TotalAmount}} SEK</b></td>
+            </tr>
+        </table>
+    </div>
+   </div>

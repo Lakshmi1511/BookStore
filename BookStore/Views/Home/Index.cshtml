@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<script src="~/Scripts/angular.js"></script>
+<script src="~/Scripts/angular-route.js"></script>
+<script src="~/Scripts/jquery-3.2.1.min.js"></script>
+<script src="~/MyScripts/Index.js"></script>
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<script src="~/Scripts/bootstrap.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link href="~/Content/BookStore.css" rel="stylesheet" />
+<html>
+<body class="container-fluid" ng-app="BookStoreApp" ng-controller="indexController">
+    @*<div id="title" class="row shadow-bottom" style="background-color:#167F92;border-top:groove !important;border-top-color:#353D48 !important">
+
+            <div class="col col-md-8" style="color:white">
+                <div class="row"><h1 style="color: white !important">Bookstore</h1></div>
+            </div>
+
+        </div>*@
+    
+
+    <div ng-view> </div>
+</body>
+</html>
